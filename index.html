@@ -114,7 +114,10 @@ nav .links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;heig
 nav .links a:hover::after{width:100%}
 .nav-cta{padding:.6em 1.4em;font-size:.85rem}
 .burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
-.burger span{width:24px;height:2px;background:var(--plum);transition:.3s}
+.burger span{width:24px;height:2px;background:var(--plum);transition:transform .3s,opacity .3s}
+.nav-backdrop{position:fixed;inset:0;background:rgba(40,21,33,.55);opacity:0;pointer-events:none;transition:opacity .35s;z-index:75}
+.nav-backdrop.show{opacity:1;pointer-events:auto}
+body.nav-lock{overflow:hidden}
 
 /* ---------- HERO ---------- */
 header.hero{position:relative;height:100svh;min-height:600px;display:flex;align-items:flex-end;
@@ -266,11 +269,21 @@ footer .fine{font-size:.72rem;color:rgba(236,212,207,.5);margin-top:1.4rem;lette
   .g-col:nth-child(3){display:none}
 }
 @media(max-width:768px){
-  nav .links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);flex-direction:column;justify-content:center;
-    gap:1.8rem;background:var(--cream);transform:translateX(100%);transition:.4s;box-shadow:var(--shadow);padding:2rem}
+  /* menu open: drop nav's transform so the fixed panel escapes to the viewport,
+     and lift nav above the sticky call bar (z-index 70) */
+  nav.menu-open{transform:none;z-index:80}
+  nav .links{position:fixed;top:0;right:0;height:100vh;height:100dvh;width:min(82vw,330px);
+    flex-direction:column;justify-content:center;align-items:flex-start;
+    gap:1.6rem;background:var(--cream);border-left:1px solid rgba(198,161,91,.4);
+    transform:translateX(100%);transition:transform .38s cubic-bezier(.2,.7,.2,1);
+    box-shadow:var(--shadow);padding:2rem}
   nav .links.open{transform:none}
-  nav .links a{font-size:1.15rem}
-  .burger{display:flex;z-index:61}
+  nav .links a{font-size:1.3rem;font-family:'Playfair Display',serif}
+  nav .links .nav-cta{font-family:'Jost',sans-serif;margin-top:.6rem}
+  .burger{display:flex;z-index:82}
+  .burger.x span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+  .burger.x span:nth-child(2){opacity:0}
+  .burger.x span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
   .callbar{display:grid}
   body{padding-bottom:58px}
   .lead-form .row{grid-template-columns:1fr}
@@ -295,8 +308,9 @@ footer .fine{font-size:.72rem;color:rgba(236,212,207,.5);margin-top:1.4rem;lette
     <a href="#visit">Visit</a>
     <a href="#book" class="btn btn-gold nav-cta">Book now</a>
   </div>
-  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+  <button class="burger" id="burger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
 </nav>
+<div class="nav-backdrop" id="navBackdrop"></div>
 
 <!-- HERO -->
 <header class="hero" id="top">
@@ -500,8 +514,19 @@ document.getElementById('yr').textContent=new Date().getFullYear();
 /* nav: hidden until scrolled past hero + mobile menu */
 const nav=document.getElementById('nav'),hero=document.querySelector('.hero');
 const burger=document.getElementById('burger'),navlinks=document.getElementById('navlinks');
-burger.addEventListener('click',()=>navlinks.classList.toggle('open'));
-navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navlinks.classList.remove('open')));
+const backdrop=document.getElementById('navBackdrop');
+function setMenu(open){
+  navlinks.classList.toggle('open',open);
+  nav.classList.toggle('menu-open',open);
+  burger.classList.toggle('x',open);
+  backdrop.classList.toggle('show',open);
+  document.body.classList.toggle('nav-lock',open);
+  burger.setAttribute('aria-expanded',open);
+}
+burger.addEventListener('click',()=>setMenu(!navlinks.classList.contains('open')));
+backdrop.addEventListener('click',()=>setMenu(false));
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>setMenu(false)));
+addEventListener('keydown',e=>{if(e.key==='Escape')setMenu(false)});
 
 /* reveal on scroll */
 const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.16});
