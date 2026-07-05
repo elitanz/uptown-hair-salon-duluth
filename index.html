@@ -1,0 +1,569 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Uptown Hair Salon — Duluth's Piedmont Avenue Salon Since 1995</title>
+<meta name="description" content="Uptown Hair Salon on Piedmont Avenue in Duluth, MN — precision cuts, color, extensions, nail care and waxing. Rated 4.8★ across 41 Google reviews. Call (218) 727-5256 to book.">
+<link rel="canonical" href="https://elitanz.github.io/uptown-hair-salon-duluth/">
+
+<!-- Open Graph -->
+<meta property="og:type" content="business.business">
+<meta property="og:title" content="Uptown Hair Salon — Duluth, MN">
+<meta property="og:description" content="A Piedmont Avenue institution since 1995. Cuts, color, extensions & nail care — rated 4.8★ across 41 reviews.">
+<meta property="og:image" content="https://elitanz.github.io/uptown-hair-salon-duluth/img/hero.jpg">
+<meta property="og:url" content="https://elitanz.github.io/uptown-hair-salon-duluth/">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Jost:wght@300;400;500;600&family=Sacramento&display=swap" rel="stylesheet">
+
+<!-- JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HairSalon",
+  "name": "Uptown Hair Salon",
+  "image": "https://elitanz.github.io/uptown-hair-salon-duluth/img/hero.jpg",
+  "url": "https://elitanz.github.io/uptown-hair-salon-duluth/",
+  "telephone": "+1-218-727-5256",
+  "priceRange": "$$",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "2820 Piedmont Ave B",
+    "addressLocality": "Duluth",
+    "addressRegion": "MN",
+    "postalCode": "55811",
+    "addressCountry": "US"
+  },
+  "geo": { "@type": "GeoCoordinates", "latitude": 46.7831, "longitude": -92.1606 },
+  "aggregateRating": { "@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "41" },
+  "openingHoursSpecification": [
+    { "@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"], "opens": "09:00", "closes": "18:00" }
+  ],
+  "sameAs": ["https://www.facebook.com/UptownHairSalonDuluthMN/"]
+}
+</script>
+
+<style>
+:root{
+  --plum:#3a2233;
+  --plum-deep:#281521;
+  --wine:#7c3350;
+  --brass:#c6a15b;
+  --brass-deep:#a67c34;
+  --blush:#ecd4cf;
+  --blush-soft:#f6e7e2;
+  --cream:#f7f0e8;
+  --cream-deep:#efe4d7;
+  --ink:#2b2320;
+  --ink-soft:#5c514a;
+  --white:#fffdfb;
+  --shadow:0 30px 60px -34px rgba(40,21,33,.55);
+  --arch:64px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;background:var(--cream);color:var(--ink);
+  font-family:'Jost',system-ui,sans-serif;font-weight:400;line-height:1.7;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+h1,h2,h3{font-family:'Playfair Display',Georgia,serif;font-weight:600;line-height:1.1;margin:0}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1160px,92vw);margin:0 auto}
+.script{font-family:'Sacramento',cursive;font-weight:400}
+.eyebrow{
+  font-family:'Jost';font-weight:500;text-transform:uppercase;letter-spacing:.32em;
+  font-size:.72rem;color:var(--brass-deep);
+}
+.btn{
+  display:inline-flex;align-items:center;gap:.55em;cursor:pointer;border:none;
+  font-family:'Jost';font-weight:500;letter-spacing:.06em;font-size:.95rem;
+  padding:.95em 1.9em;border-radius:100px;transition:.35s;
+}
+.btn-solid{background:var(--plum);color:var(--cream)}
+.btn-solid:hover{background:var(--wine)}
+.btn-gold{background:var(--brass);color:var(--plum-deep)}
+.btn-gold:hover{background:var(--brass-deep);color:var(--white)}
+.btn-ghost{background:transparent;color:var(--plum);border:1px solid rgba(58,34,51,.35)}
+.btn-ghost:hover{background:var(--plum);color:var(--cream)}
+
+/* ---------- signature motif: brass double-hairline ---------- */
+.rule{height:0;border:0;border-top:1px solid var(--brass);position:relative;opacity:.6;margin:0}
+.rule::after{content:"";position:absolute;left:0;right:0;top:3px;border-top:1px solid var(--brass);opacity:.5}
+.diamond{width:9px;height:9px;background:var(--brass);transform:rotate(45deg);margin:0 auto}
+
+/* ---------- NAV (hidden until scrolled past hero) ---------- */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.7rem clamp(1rem,4vw,2.4rem);
+  background:rgba(247,240,232,.92);backdrop-filter:blur(10px);
+  border-bottom:1px solid rgba(198,161,91,.35);
+  transform:translateY(-105%);transition:transform .5s cubic-bezier(.2,.7,.2,1);
+}
+nav.show{transform:translateY(0)}
+nav .brand{font-family:'Sacramento',cursive;font-size:1.9rem;color:var(--plum);line-height:1}
+nav .brand small{font-family:'Jost';font-weight:500;letter-spacing:.3em;font-size:.55rem;
+  text-transform:uppercase;color:var(--brass-deep);display:block;margin-top:-4px}
+nav .links{display:flex;align-items:center;gap:2rem}
+nav .links a{font-weight:400;letter-spacing:.04em;font-size:.95rem;position:relative}
+nav .links a::after{content:"";position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--brass);transition:.3s}
+nav .links a:hover::after{width:100%}
+.nav-cta{padding:.6em 1.4em;font-size:.85rem}
+.burger{display:none;flex-direction:column;gap:5px;background:none;border:0;cursor:pointer;padding:6px}
+.burger span{width:24px;height:2px;background:var(--plum);transition:.3s}
+
+/* ---------- HERO ---------- */
+header.hero{position:relative;height:100svh;min-height:600px;display:flex;align-items:flex-end;
+  overflow:hidden;color:var(--white)}
+.hero-img{position:absolute;inset:0;z-index:0;will-change:transform}
+.hero-img img{width:100%;height:120%;object-fit:cover;object-position:50% 32%}
+.hero-img::after{content:"";position:absolute;inset:0;
+  background:linear-gradient(180deg,rgba(40,21,33,.42) 0%,rgba(40,21,33,.08) 34%,rgba(40,21,33,.22) 64%,rgba(40,21,33,.82) 100%)}
+.hero-inner{position:relative;z-index:2;padding:0 clamp(1.2rem,5vw,4rem) clamp(3.2rem,7vh,5.5rem);width:min(1160px,92vw);margin:0 auto}
+.hero .eyebrow{color:var(--blush);letter-spacing:.4em}
+.hero h1{font-size:clamp(3.1rem,10vw,7rem);font-weight:600;letter-spacing:-.01em;
+  margin:.28em 0 .1em;text-shadow:0 2px 30px rgba(40,21,33,.5)}
+.hero h1 em{font-style:italic;color:var(--blush)}
+.hero .sub{font-size:clamp(1.02rem,2.1vw,1.28rem);max-width:34ch;font-weight:300;color:#f4e7e2;margin-bottom:1.7rem}
+.hero-actions{display:flex;flex-wrap:wrap;gap:.9rem;align-items:center}
+.hero-badge{display:inline-flex;align-items:center;gap:.55rem;font-size:.9rem;color:#f4e7e2;
+  padding:.5rem 1rem;border:1px solid rgba(246,231,226,.4);border-radius:100px}
+.hero-badge b{font-family:'Playfair Display';font-weight:700;color:var(--brass)}
+.stars{color:var(--brass);letter-spacing:2px}
+.scrollcue{position:absolute;left:50%;bottom:22px;transform:translateX(-50%);z-index:3;
+  font-size:.66rem;letter-spacing:.3em;text-transform:uppercase;color:#f0dcd6;opacity:.85;
+  display:flex;flex-direction:column;align-items:center;gap:7px;animation:bob 2.4s ease-in-out infinite}
+.scrollcue span{width:1px;height:34px;background:linear-gradient(var(--brass),transparent)}
+@keyframes bob{50%{transform:translate(-50%,7px)}}
+
+/* ---------- reveal ---------- */
+.reveal{opacity:0;transform:translateY(34px);transition:opacity 1s ease,transform 1s cubic-bezier(.2,.7,.2,1)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.12s}.reveal.d2{transition-delay:.24s}.reveal.d3{transition-delay:.36s}
+
+/* ---------- STORY (rises over hero) ---------- */
+.story{position:relative;z-index:5;background:var(--cream);margin-top:-46px;
+  border-radius:var(--arch) var(--arch) 0 0;box-shadow:0 -34px 70px -34px rgba(40,21,33,.6);
+  padding:clamp(3.4rem,7vw,6rem) 0 clamp(2rem,4vw,3rem)}
+.story .wrap{max-width:960px;text-align:center}
+.story h2{font-size:clamp(2rem,4.4vw,3.1rem);margin:.5rem 0 1rem}
+.story p{font-size:1.12rem;color:var(--ink-soft);max-width:60ch;margin:0 auto}
+.story .lead{color:var(--ink);font-size:1.22rem}
+.stats{display:flex;flex-wrap:wrap;justify-content:center;gap:clamp(1.6rem,5vw,4.5rem);
+  margin-top:clamp(2.4rem,5vw,3.6rem)}
+.stat{min-width:120px}
+.stat b{font-family:'Playfair Display';font-weight:700;font-size:clamp(2.2rem,5vw,3.2rem);color:var(--plum);display:block;line-height:1}
+.stat span{font-family:'Jost';font-size:.7rem;letter-spacing:.24em;text-transform:uppercase;color:var(--brass-deep)}
+
+/* ---------- SERVICES ---------- */
+.services{padding:clamp(3.5rem,8vw,7rem) 0;background:
+  linear-gradient(180deg,var(--cream) 0%,var(--cream-deep) 100%)}
+.sec-head{text-align:center;max-width:640px;margin:0 auto clamp(2.4rem,5vw,3.6rem)}
+.sec-head h2{font-size:clamp(2.1rem,5vw,3.4rem);margin:.6rem 0}
+.sec-head p{color:var(--ink-soft)}
+.svc-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:clamp(2rem,4vw,3.4rem);align-items:center}
+.svc-list{display:flex;flex-direction:column}
+.svc{display:flex;gap:1.1rem;justify-content:space-between;align-items:baseline;
+  padding:1.15rem 0;border-bottom:1px solid rgba(166,124,52,.28)}
+.svc:last-child{border-bottom:0}
+.svc .n{font-family:'Playfair Display';font-weight:600;font-size:1.42rem;color:var(--plum)}
+.svc .d{display:block;font-family:'Jost';font-weight:300;font-style:italic;font-size:.96rem;color:var(--ink-soft);margin-top:.25rem;max-width:42ch}
+.svc .p{font-family:'Jost';font-weight:500;color:var(--brass-deep);white-space:nowrap;font-size:.9rem;letter-spacing:.05em}
+.svc-media{position:relative}
+.arch-frame{border-radius:var(--arch) var(--arch) 14px 14px;overflow:hidden;box-shadow:var(--shadow);
+  border:1px solid rgba(198,161,91,.4)}
+.arch-frame img{width:100%;height:clamp(360px,52vw,560px);object-fit:cover}
+.svc-media .tag{position:absolute;left:-14px;bottom:26px;background:var(--brass);color:var(--plum-deep);
+  font-family:'Sacramento';font-size:1.5rem;padding:.1rem 1.1rem;border-radius:8px;box-shadow:var(--shadow)}
+
+/* ---------- GALLERY (parallax columns) ---------- */
+.gallery{padding:clamp(3.5rem,8vw,7rem) 0;background:var(--plum);color:var(--cream);overflow:hidden}
+.gallery .sec-head h2{color:var(--white)}
+.gallery .sec-head p{color:var(--blush)}
+.gallery .eyebrow{color:var(--brass)}
+.g-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;align-items:start}
+.g-col{display:flex;flex-direction:column;gap:16px;will-change:transform}
+.g-col img{width:100%;border-radius:10px;object-fit:cover;box-shadow:0 24px 44px -28px rgba(0,0,0,.7)}
+.g-col img:nth-child(odd){height:280px}
+.g-col img:nth-child(even){height:210px}
+
+/* ---------- REVIEWS ---------- */
+.reviews{padding:clamp(3.5rem,8vw,7rem) 0;background:var(--blush-soft)}
+.rev-top{text-align:center;margin-bottom:clamp(2rem,4vw,3rem)}
+.rev-score{font-family:'Playfair Display';font-weight:700;font-size:3.4rem;color:var(--plum);line-height:1}
+.rev-top .stars{font-size:1.5rem}
+.rev-top .cnt{color:var(--ink-soft);font-size:.95rem;letter-spacing:.02em}
+.rev-slider{position:relative;max-width:820px;margin:0 auto;min-height:230px}
+.rev{position:absolute;inset:0;opacity:0;transition:opacity .7s;display:flex;flex-direction:column;
+  align-items:center;text-align:center;padding:0 1rem;pointer-events:none}
+.rev.active{opacity:1;position:relative;pointer-events:auto}
+.rev .stars{font-size:1.1rem;margin-bottom:1rem}
+.rev q{font-family:'Playfair Display';font-style:italic;font-weight:500;font-size:clamp(1.2rem,2.6vw,1.65rem);
+  color:var(--plum);line-height:1.5;quotes:"“" "”"}
+.rev .who{margin-top:1.3rem;font-family:'Jost';font-weight:500;letter-spacing:.14em;text-transform:uppercase;
+  font-size:.78rem;color:var(--brass-deep)}
+.rev-dots{display:flex;justify-content:center;gap:10px;margin-top:2rem}
+.rev-dots button{width:9px;height:9px;border-radius:50%;border:0;background:rgba(124,51,80,.3);cursor:pointer;transition:.3s;padding:0}
+.rev-dots button.on{background:var(--wine);transform:scale(1.3)}
+.rev-cta{text-align:center;margin-top:2.4rem}
+
+/* ---------- VISIT (hours + map + form) ---------- */
+.visit{padding:clamp(3.5rem,8vw,7rem) 0;background:var(--cream)}
+.visit-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,4vw,3.4rem)}
+.info-card{background:var(--white);border:1px solid rgba(198,161,91,.35);border-radius:20px;
+  padding:clamp(1.6rem,3vw,2.4rem);box-shadow:var(--shadow)}
+.info-card h3{font-size:1.5rem;color:var(--plum);margin-bottom:1rem}
+.hours{list-style:none;padding:0;margin:0 0 1.4rem}
+.hours li{display:flex;justify-content:space-between;padding:.5rem 0;border-bottom:1px dashed rgba(92,81,74,.22);font-size:.98rem}
+.hours li span:last-child{color:var(--ink-soft)}
+.hours .closed{color:var(--wine)}
+.addr{font-size:1rem;color:var(--ink-soft);margin:.2rem 0 1.2rem;line-height:1.6}
+.map-embed{border-radius:16px;overflow:hidden;border:1px solid rgba(198,161,91,.35);box-shadow:var(--shadow);min-height:280px}
+.map-embed iframe{width:100%;height:100%;min-height:280px;border:0;display:block}
+
+/* ---------- BOOK / lead form ---------- */
+.book{padding:clamp(3.5rem,8vw,7rem) 0;background:var(--plum-deep);color:var(--cream)}
+.book .sec-head h2{color:var(--white)}
+.book .sec-head p{color:var(--blush)}
+.book .eyebrow{color:var(--brass)}
+.lead-form{max-width:560px;margin:0 auto;display:grid;gap:.9rem}
+.lead-form input,.lead-form textarea{width:100%;font-family:'Jost';font-size:1rem;color:var(--ink);
+  background:var(--cream);border:1px solid rgba(198,161,91,.5);border-radius:12px;padding:.95rem 1.1rem}
+.lead-form textarea{resize:vertical}
+.lead-form input:focus,.lead-form textarea:focus{outline:2px solid var(--brass)}
+.lead-form .row{display:grid;grid-template-columns:1fr 1fr;gap:.9rem}
+.lead-form button{justify-content:center;width:100%;padding:1.05em;font-size:1rem}
+.form-ok,.form-err{text-align:center;font-family:'Playfair Display';font-style:italic;font-size:1.3rem;padding:1.4rem;color:var(--brass)}
+.form-err{color:var(--blush)}
+.book .or{text-align:center;color:var(--blush);margin:1.4rem 0 0;font-size:.9rem}
+.book .or a{color:var(--brass);border-bottom:1px solid var(--brass)}
+
+/* ---------- FOOTER ---------- */
+footer{background:var(--plum-deep);color:var(--blush);padding:2.6rem 0 6.5rem;text-align:center;
+  border-top:1px solid rgba(198,161,91,.25)}
+footer .brand{font-family:'Sacramento';font-size:2.4rem;color:var(--cream)}
+footer .fmeta{font-size:.9rem;margin:.6rem 0;color:var(--blush)}
+footer a.fb{color:var(--brass);border-bottom:1px solid rgba(198,161,91,.5)}
+footer .fine{font-size:.72rem;color:rgba(236,212,207,.5);margin-top:1.4rem;letter-spacing:.03em}
+
+/* ---------- sticky mobile call bar ---------- */
+.callbar{position:fixed;left:0;right:0;bottom:0;z-index:70;display:none;
+  grid-template-columns:repeat(3,1fr);background:var(--plum);border-top:1px solid var(--brass)}
+.callbar a{display:flex;flex-direction:column;align-items:center;gap:2px;padding:.6rem 0;
+  color:var(--cream);font-size:.72rem;letter-spacing:.08em;border-right:1px solid rgba(198,161,91,.3)}
+.callbar a:last-child{border-right:0}
+.callbar a svg{width:19px;height:19px;stroke:var(--brass);fill:none;stroke-width:1.8}
+
+/* ---------- responsive ---------- */
+@media(max-width:860px){
+  .svc-grid,.visit-grid{grid-template-columns:1fr}
+  .svc-media{order:-1}
+  .g-cols{grid-template-columns:repeat(2,1fr)}
+  .g-col:nth-child(3){display:none}
+}
+@media(max-width:768px){
+  nav .links{position:fixed;inset:0 0 0 auto;width:min(78vw,320px);flex-direction:column;justify-content:center;
+    gap:1.8rem;background:var(--cream);transform:translateX(100%);transition:.4s;box-shadow:var(--shadow);padding:2rem}
+  nav .links.open{transform:none}
+  nav .links a{font-size:1.15rem}
+  .burger{display:flex;z-index:61}
+  .callbar{display:grid}
+  body{padding-bottom:58px}
+  .lead-form .row{grid-template-columns:1fr}
+  .hero h1{font-size:clamp(2.8rem,14vw,4rem)}
+}
+@media(prefers-reduced-motion:reduce){
+  .reveal{opacity:1!important;transform:none!important}
+  .scrollcue{animation:none}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <a href="#top" class="brand">Uptown<small>Hair Salon · Duluth</small></a>
+  <div class="links" id="navlinks">
+    <a href="#salon">The Salon</a>
+    <a href="#services">Services</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#reviews">Reviews</a>
+    <a href="#visit">Visit</a>
+    <a href="#book" class="btn btn-gold nav-cta">Book now</a>
+  </div>
+  <button class="burger" id="burger" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- HERO -->
+<header class="hero" id="top">
+  <div class="hero-img" id="heroImg"><img src="img/hero.jpg" alt="A client with glossy, freshly styled balayage hair at Uptown Hair Salon in Duluth"></div>
+  <div class="hero-inner">
+    <p class="eyebrow reveal in">Piedmont Avenue · Duluth, MN · Since 1995</p>
+    <h1 class="reveal in d1">Uptown <em>Hair Salon</em></h1>
+    <p class="sub reveal in d2">Cuts, color, extensions and nail care from the stylists Duluth has trusted for three decades.</p>
+    <div class="hero-actions reveal in d3">
+      <a href="#book" class="btn btn-gold">Book your visit</a>
+      <span class="hero-badge"><span class="stars">★★★★★</span> <b>4.8</b>&nbsp;·&nbsp;41 Google reviews</span>
+    </div>
+  </div>
+  <div class="scrollcue"><span></span>Scroll</div>
+</header>
+
+<!-- STORY -->
+<section class="story" id="salon">
+  <div class="wrap">
+    <p class="eyebrow reveal">Welcome to Uptown</p>
+    <h2 class="reveal d1">A Piedmont Avenue institution</h2>
+    <p class="lead reveal d2">Since 1995, Uptown Hair Salon has been the friendly, full-service salon on Duluth's Piedmont Avenue — a clean, welcoming room where a team of stylists of every age takes real pride in sending you home looking exactly how you pictured.</p>
+    <p class="reveal d2" style="margin-top:1.1rem">From a precision cut to a full color transformation, extensions, a fresh manicure or a wax, it's the kind of place regulars keep coming back to for the people as much as the work.</p>
+    <div class="stats">
+      <div class="stat reveal"><b data-count="4.8" data-dec="1">4.8</b><span>Google rating</span></div>
+      <div class="stat reveal d1"><b data-count="41">41</b><span>5-star reviews</span></div>
+      <div class="stat reveal d2"><b data-count="30">30</b><span>Years on Piedmont</span></div>
+      <div class="stat reveal d3"><b data-count="6" data-suffix="+">6+</b><span>Services</span></div>
+    </div>
+    <div style="margin-top:2.6rem" class="reveal"><div class="diamond"></div></div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow reveal">What we do</p>
+      <h2 class="reveal d1">The chair is yours</h2>
+      <p class="reveal d2">A full-service salon under one roof — hair, nails and skin. Call for current pricing; every visit starts with a real conversation about what you want.</p>
+    </div>
+    <div class="svc-grid">
+      <div class="svc-list">
+        <div class="svc reveal">
+          <div><span class="n">Precision Cuts &amp; Styling</span>
+            <span class="d">Cuts, trims, blowouts and finished styling for every length, age and texture.</span></div>
+          <span class="p">By consult</span>
+        </div>
+        <div class="svc reveal d1">
+          <div><span class="n">Color Transformations</span>
+            <span class="d">All-over color, dimensional highlights, balayage and grey coverage with top-tier products.</span></div>
+          <span class="p">By consult</span>
+        </div>
+        <div class="svc reveal d2">
+          <div><span class="n">Hair Extensions</span>
+            <span class="d">Length and fullness added and blended so it moves — and looks — like your own.</span></div>
+          <span class="p">By consult</span>
+        </div>
+        <div class="svc reveal d2">
+          <div><span class="n">Nail Care</span>
+            <span class="d">Manicures and pedicures with an artist's eye — relaxed, spotless and unhurried.</span></div>
+          <span class="p">By consult</span>
+        </div>
+        <div class="svc reveal d3">
+          <div><span class="n">Body Waxing</span>
+            <span class="d">Quick, comfortable waxing services booked alongside your hair or nail appointment.</span></div>
+          <span class="p">By consult</span>
+        </div>
+      </div>
+      <div class="svc-media reveal d1">
+        <div class="arch-frame"><img src="img/color.jpg" alt="A stylist applying color at Uptown Hair Salon"></div>
+        <span class="tag">since 1995</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="gallery" id="gallery">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow reveal">Inside the salon</p>
+      <h2 class="reveal d1">A room made for good hair days</h2>
+      <p class="reveal d2">Real cuts, real color, real chairs — a look at the space and the work.</p>
+    </div>
+    <div class="g-cols">
+      <div class="g-col" data-speed="0.04">
+        <img src="img/interior1.jpg" alt="Uptown Hair Salon interior with styling chairs and mirrors">
+        <img src="img/scissors.jpg" alt="A precision cut in progress">
+        <img src="img/nails.jpg" alt="A fresh red manicure">
+      </div>
+      <div class="g-col" data-speed="0.10" style="margin-top:34px">
+        <img src="img/style.jpg" alt="A stylist finishing a client's hair">
+        <img src="img/interior3.jpg" alt="Modern lit mirrors at Uptown Hair Salon">
+        <img src="img/blowdry.jpg" alt="A blow-out and finishing style">
+      </div>
+      <div class="g-col" data-speed="0.02">
+        <img src="img/cut.jpg" alt="Highlights and color work up close">
+        <img src="img/interior2.jpg" alt="Bright, elegant salon room">
+        <img src="img/nails2.jpg" alt="Nail polish being applied">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="reviews" id="reviews">
+  <div class="wrap">
+    <div class="rev-top reveal">
+      <div class="rev-score">4.8</div>
+      <div class="stars">★★★★★</div>
+      <div class="cnt">Rated across <b>41</b> Google reviews</div>
+    </div>
+    <div class="rev-slider" id="revSlider">
+      <div class="rev active"><div class="stars">★★★★★</div><q>Love my stylist, Nan. Shop is clean and welcoming.</q><div class="who">Lora Olson · Google</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><q>Fantastic service. Sarah S. is an artist in her nail care as well as pedicure services — she takes such great pride in her work. Very relaxed and clean environment. Will definitely be going back.</q><div class="who">Dawnmarie Stavig · Google</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><q>Loved the atmosphere, my stylist Shaunie was amazing. Made me feel pampered and did my hair exactly how I asked. I am beyond satisfied.</q><div class="who">Lynnette Arseneau · Google</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><q>I'm so picky about getting my hair cut. Kathy cut my hair exactly like I wanted it. I'm so pleased to have found a stylist that listens to what you want!</q><div class="who">Pamela Gardas · Google</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><q>I loved that the hairdressers were a nice variety of ages. Hope took very good care of me and we visited companionably.</q><div class="who">Linda Talbot · Google</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><q>Jeff is amazing and he always does exactly what I show him. Highly recommend.</q><div class="who">Curran Starry · Google</div></div>
+      <div class="rev"><div class="stars">★★★★★</div><q>They are excellent stylists and great related services. I would recommend to anyone looking for something new!</q><div class="who">Patrick Wagner · Google</div></div>
+    </div>
+    <div class="rev-dots" id="revDots"></div>
+    <div class="rev-cta"><a href="#book" class="btn btn-solid">Book your appointment</a></div>
+  </div>
+</section>
+
+<!-- VISIT -->
+<section class="visit" id="visit">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow reveal">Find us</p>
+      <h2 class="reveal d1">Stop in on Piedmont</h2>
+    </div>
+    <div class="visit-grid">
+      <div class="info-card reveal">
+        <h3>Hours &amp; contact</h3>
+        <ul class="hours">
+          <li><span>Monday – Friday</span><span>9:00 AM – 6:00 PM</span></li>
+          <li><span>Saturday</span><span>By appointment</span></li>
+          <li><span>Sunday</span><span class="closed">Closed</span></li>
+        </ul>
+        <p class="addr">2820 Piedmont Ave B<br>Duluth, MN 55811</p>
+        <div style="display:flex;flex-wrap:wrap;gap:.7rem">
+          <a href="tel:+12187275256" class="btn btn-solid">Call (218) 727-5256</a>
+          <a href="sms:+12187275256" class="btn btn-ghost">Text us</a>
+          <a href="https://www.google.com/maps/dir/?api=1&destination=Uptown+Hair+Salon,+2820+Piedmont+Ave+B,+Duluth,+MN+55811" target="_blank" rel="noopener" class="btn btn-ghost">Directions</a>
+        </div>
+      </div>
+      <div class="map-embed reveal d1">
+        <iframe title="Map to Uptown Hair Salon" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Uptown+Hair+Salon,+2820+Piedmont+Ave+B,+Duluth,+MN+55811&output=embed"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BOOK -->
+<section class="book" id="book">
+  <div class="wrap">
+    <div class="sec-head">
+      <p class="eyebrow reveal">Book your visit</p>
+      <h2 class="reveal d1">Request an appointment</h2>
+      <p class="reveal d2">Tell us what you're after and the best number to reach you — we'll call to confirm your time.</p>
+    </div>
+    <form id="leadForm" class="lead-form reveal d2">
+      <div class="row">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="tel" name="phone" placeholder="Phone" required>
+      </div>
+      <input type="email" name="email" placeholder="Email (optional)">
+      <textarea name="message" placeholder="What would you like done? (cut, color, nails, a specific stylist…)" rows="3" required></textarea>
+      <input type="hidden" name="_subject" value="New appointment request from Uptown Hair Salon website">
+      <input type="text" name="_honey" style="display:none">
+      <button type="submit" class="btn btn-gold">Send request</button>
+    </form>
+    <p class="or">Prefer to talk? Call <a href="tel:+12187275256">(218) 727-5256</a> or <a href="sms:+12187275256">text us</a>.</p>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="brand">Uptown Hair Salon</div>
+    <p class="fmeta">2820 Piedmont Ave B, Duluth, MN 55811 · <a href="tel:+12187275256">(218) 727-5256</a></p>
+    <p class="fmeta"><a class="fb" href="https://www.facebook.com/UptownHairSalonDuluthMN/" target="_blank" rel="noopener">Find us on Facebook</a></p>
+    <hr class="rule" style="max-width:120px;margin:1.6rem auto">
+    <p class="fine">© <span id="yr"></span> Uptown Hair Salon · Piedmont Avenue, Duluth, Minnesota</p>
+  </div>
+</footer>
+
+<!-- sticky mobile call bar -->
+<div class="callbar">
+  <a href="tel:+12187275256"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2 4.2 2 2 0 0 1 4 2h3a2 2 0 0 1 2 1.7c.1.9.3 1.8.6 2.6a2 2 0 0 1-.5 2.1L7.9 9.8a16 16 0 0 0 6 6l1.4-1.2a2 2 0 0 1 2.1-.5c.8.3 1.7.5 2.6.6a2 2 0 0 1 1.7 2Z"/></svg>Call</a>
+  <a href="sms:+12187275256"><svg viewBox="0 0 24 24"><path d="M21 11.5a8.4 8.4 0 0 1-9 8.4 9 9 0 0 1-3.7-.8L3 20l1.3-4.3A8.4 8.4 0 1 1 21 11.5Z"/></svg>Text</a>
+  <a href="https://www.google.com/maps/dir/?api=1&destination=Uptown+Hair+Salon,+2820+Piedmont+Ave+B,+Duluth,+MN+55811" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M21 10c0 6-9 12-9 12s-9-6-9-12a9 9 0 0 1 18 0Z"/><circle cx="12" cy="10" r="3"/></svg>Map</a>
+</div>
+
+<script>
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+/* nav: hidden until scrolled past hero + mobile menu */
+const nav=document.getElementById('nav'),hero=document.querySelector('.hero');
+const burger=document.getElementById('burger'),navlinks=document.getElementById('navlinks');
+burger.addEventListener('click',()=>navlinks.classList.toggle('open'));
+navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navlinks.classList.remove('open')));
+
+/* reveal on scroll */
+const io=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.16});
+document.querySelectorAll('.reveal:not(.in)').forEach(el=>io.observe(el));
+
+/* count-up */
+function countUp(el){
+  const target=parseFloat(el.dataset.count),dec=+(el.dataset.dec||0),suf=el.dataset.suffix||'';
+  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+  let s=null;const dur=1400;el.textContent=(dec?(0).toFixed(dec):0)+suf;
+  function step(t){if(!s)s=t;const p=Math.min((t-s)/dur,1);const v=target*(1-Math.pow(1-p,3));
+    el.textContent=(dec?v.toFixed(dec):Math.round(v))+suf;if(p<1)requestAnimationFrame(step);}
+  requestAnimationFrame(step);
+}
+const statIO=new IntersectionObserver((es)=>es.forEach(e=>{if(e.isIntersecting){countUp(e.target.querySelector('b'));statIO.unobserve(e.target)}}),{threshold:.35});
+document.querySelectorAll('.stat').forEach(s=>statIO.observe(s));
+
+/* reviews slider */
+const revs=[...document.querySelectorAll('.rev')],dots=document.getElementById('revDots');
+let ri=0,rtimer;
+revs.forEach((_,i)=>{const b=document.createElement('button');if(!i)b.className='on';
+  b.addEventListener('click',()=>{go(i);reset()});dots.appendChild(b)});
+function go(i){revs[ri].classList.remove('active');dots.children[ri].classList.remove('on');
+  ri=i;revs[ri].classList.add('active');dots.children[ri].classList.add('on')}
+function next(){go((ri+1)%revs.length)}
+function reset(){clearInterval(rtimer);rtimer=setInterval(next,5200)}
+reset();
+
+/* single rAF scroll handler: nav toggle + hero parallax + gallery parallax */
+const heroImg=document.getElementById('heroImg');
+const gcols=[...document.querySelectorAll('.g-col')];
+const reduce=matchMedia('(prefers-reduced-motion:reduce)').matches;
+let ticking=false;
+function onScroll(){
+  const y=window.scrollY;
+  if(y>window.innerHeight*0.72)nav.classList.add('show');else nav.classList.remove('show');
+  if(!reduce){
+    heroImg.style.transform='translateY('+(y*0.28)+'px)';
+    const gal=document.getElementById('gallery');
+    if(gal){const r=gal.getBoundingClientRect();
+      if(r.top<window.innerHeight&&r.bottom>0){const c=(window.innerHeight-r.top);
+        gcols.forEach(col=>{const sp=parseFloat(col.dataset.speed||0);col.style.transform='translateY('+(-(c*sp))+'px)'})}}
+  }
+  ticking=false;
+}
+window.addEventListener('scroll',()=>{if(!ticking){requestAnimationFrame(onScroll);ticking=true}},{passive:true});
+onScroll();
+
+/* lead form → FormSubmit AJAX (Eli's inbox for the demo; swap to owner on close) */
+const FORM_ENDPOINT="https://formsubmit.co/ajax/elit@lakecountryschool.org";
+document.getElementById('leadForm').addEventListener('submit',async(e)=>{
+  e.preventDefault();const f=e.target,btn=f.querySelector('button');
+  btn.disabled=true;btn.textContent='Sending…';
+  try{
+    const res=await fetch(FORM_ENDPOINT,{method:'POST',
+      headers:{'Content-Type':'application/json',Accept:'application/json'},
+      body:JSON.stringify(Object.fromEntries(new FormData(f)))});
+    const ok=(await res.json()).success==='true';
+    f.innerHTML=ok?'<p class="form-ok">Thank you — we\'ll call to confirm your appointment shortly.</p>'
+      :'<p class="form-err">Something went wrong. Please call us at (218) 727-5256.</p>';
+  }catch{f.innerHTML='<p class="form-err">Something went wrong. Please call us at (218) 727-5256.</p>';}
+});
+</script>
+</body>
+</html>
